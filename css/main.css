@@ -1,0 +1,160 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+  
+  section:nth-child(odd) {
+    background:#f8f9fa
+  }
+
+  section{
+      padding-top: 10px;
+      padding-bottom: 20px;
+  }
+
+/* Header */
+
+nav ul li{
+    padding: 7px;
+}
+
+ .dropdown:hover .dropdown-menu{
+    display:block;
+    margin-top: 0;
+} 
+
+.banner {
+    width:100%;
+    height: 300px;
+   }
+
+/* About US */
+
+.heading {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.content {
+ text-align: left;
+}
+
+
+/* imp dates */
+
+.card{
+    margin-left:auto; 
+    margin-right: auto;
+    margin-bottom: 5px;
+    width: 90%;
+    
+}
+
+.mycard .card-header{
+    background:url(../images/plus.png) 5px center no-repeat #f5f5f5;
+    padding-left: 50px;
+    border-bottom: 0; 
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1;
+    color: #212529;
+}
+
+.mycard .card-body{
+    color: #963030;
+}
+
+/* keynote speakers */
+.speaker {
+    background-color:#f8f9fa;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.speaker .card-body{
+    text-align: center;
+}
+
+.speaker a{
+    color: #0077B5;
+}
+
+
+
+   /* Form*/
+/* .myform .gender{
+
+    
+}  */
+.myform .form-control{
+    width:75%
+}
+
+.myform .col-form-label{
+    padding-left: 50px;
+    font-weight: bolder 
+}
+
+.myform button{
+    display: block;
+    margin: auto;
+}
+
+.form-heading {
+    color: cadetblue;
+    font-size: 30px;
+    text-align: center;
+
+    padding-top: 15px;
+    padding-bottom: 25px;
+}
+
+
+
+
+
+
+/* timeline */
+
+ul.timeline {
+    list-style-type: none;
+    position: relative;
+}
+ul.timeline:before {
+    content: ' ';
+    background: #d4d9df;
+    display: inline-block;
+    position: absolute;
+    left: 29px;
+    width: 2px;
+    height: 100%;
+    z-index: 400;
+}
+ul.timeline > li {
+    margin: 20px 0;
+    padding-left: 20px;
+}
+ul.timeline > li:before {
+    content: ' ';
+    background: white;
+    display: inline-block;
+    position: absolute;
+    border-radius: 50%;
+    border: 3px solid #22c0e8;
+    left: 20px;
+    width: 20px;
+    height: 20px;
+    z-index: 400;
+}
+
+
+
+/* Footer*/
+
+.my-footer {
+    background-color: #f8f9fa!important;
+    color: lightslategrey;
+    margin-top: 0px;
+    border-top: 1px solid grey;
+
+}
