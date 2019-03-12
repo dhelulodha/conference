@@ -20,8 +20,12 @@
 
         <script type="text/javascript">
           function val(){
-	         
-          
+          if(frm.email.value=="")
+          {
+            alert("Please enter the email");
+            frm.email.focus();	
+            return false;
+          }	
           var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
           
           if (reg.test(frm.email.value) == false) 
@@ -30,7 +34,13 @@
             frm.email.focus();	
             return false;
           }
-
+          
+          if(frm.phone.value=="")
+          {
+            alert("Please enter the phone number");
+            frm.phone.focus(); 
+            return false;
+          }
           if(isNaN(frm.phone.value))
           {
             alert("Invalid phone number");
@@ -43,20 +53,6 @@
             frm.phone.focus(); 
             return false;
           }
-
-            var genderM=frm.male.value;
-            var genderF=frm.female.value;
-
-           if(genderM.checked==false && genderF.checked==false )
-             {
-              alert("You must select male or female");
-              return false;
-             } 
-            
-          if( frm.country.value == "-1" ) {
-            alert( "Please provide your country!" );
-            return false;
-            }
           
           return true;
           }
@@ -67,28 +63,28 @@
 
       <!--Header Section-->
 
-      <header>
+        <header>
           <nav class="navbar navbar-expand-lg navbar-light bg-light ">
             <a class="navbar-brand" href="index.html"><img src="images/logo.png" height="75px" width="150px"/></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
           
-            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-              <ul class="navbar-nav ">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
                 <li class="nav-item ">
                   <a class="nav-link" href="index.html">HOME <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item dropdown">
+                <li class="nav-item dropdown ">
                   <a class="nav-link " href="#"  role="button" >
                     ABOUT
                   </a>
                   <div class="dropdown-menu" >
                     <a class="dropdown-item" href="#">COMMITTEE</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="speakers.html">SPEAKER</a>
+                    <a class="dropdown-item" href="#">SPEAKER</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="program.html">PROGRAME</a>
+                    <a class="dropdown-item" href="#">PROGRAME</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="#">VENUE</a>
                   </div>
@@ -98,29 +94,24 @@
                     ATTENDING
                   </a>
                   <div class="dropdown-menu" >
-                    <a class="dropdown-item" href="#">Call for Papers</a>
+                    <a class="dropdown-item" href="#">Action</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Submission & Dates</a>
+                    <a class="dropdown-item" href="#">Another action</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="register.php">Registration</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Visa & Letter</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
                   </div>
                 </li>
                 <li class="nav-item dropdown">
                   <a class="nav-link " href="#"  role="button" >
                     AGENDA
                   </a>
-                  <div class="dropdown-menu " >
-                    <a class="dropdown-item" href="program.html">Agenda at Glance</a>
+                  <div class="dropdown-menu" >
+                    <a class="dropdown-item" href="#">Action</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="workshop.html">Workshops</a>
+                    <a class="dropdown-item" href="#">Another action</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="city.html">One Day Tour</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
                   </div>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link " href="register.php">REGISTER HERE</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link " href="#">CONTACT</a>
@@ -135,41 +126,40 @@
           </div>
         </header>
 
-
          <!--Header Section Ends-->
 
         <!-- Registeration Form -->
-      <section>
+         <section>
           <div> 
             <div class=form-heading><b>Register Here</b></div> 
             <div class=container>
-           <form name="frm" method="post" action="#" class="myform" >
+           <form name="frm" method="post" action="#" class="myform">
               <div class="form-group row">
                   <div class="col-sm-1"> </div>
                   <label for="name" class="col-sm-2 col-form-label">Name</label>
                   <div class="col-sm-9 col-right">
-                    <input type="text" class="form-control" id="name" placeholder="Name" name="name" required> 
+                    <input type="text" class="form-control" id="name" placeholder="Name" name=name>
                   </div>
                 </div>
               <div class="form-group row">
                   <div class="col-sm-1"> </div>
                 <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
                 <div class="col-sm-9 col-right">
-                  <input type="email" class="form-control" id="inputEmail3" placeholder="Email" name="email" required>
+                  <input type="email" class="form-control" id="inputEmail3" placeholder="Email" name=email>
                 </div>
               </div>
               <div class="form-group row">
                   <div class="col-sm-1"> </div>
                   <label for="inputNo3" class="col-sm-2 col-form-label">Phone No</label>
                   <div class="col-sm-9 col-right">
-                    <input type="number" class="form-control" id="inputNo3" placeholder="Mobile" name="phone" required>
+                    <input type="number" class="form-control" id="inputNo3" placeholder="Mobile" name=phone>
                   </div>
                 </div>
                 <div class="form-group row">
                     <div class="col-sm-1"> </div>
                     <label for="dob" class="col-sm-2 col-form-label">D.O.B</label>
                     <div class="col-sm-9 col-right">
-                      <input type="date" class="form-control" id="dob" placeholder="" name="dob" required>
+                      <input type="date" class="form-control" id="dob" placeholder="" name=dob>
                     </div>
                   </div>
               <fieldset class="form-group">
@@ -178,16 +168,16 @@
                   <legend class="col-form-label col-sm-2 pt-0">Gender</legend>
                    <div class="col-sm-1 col-right">
                     <div class="form-check gender">
-                      <input class="form-check-input" type="radio" name="gender" id="male" value="m" checked>
-                      <label class="form-check-label" for="male">
+                      <input class="form-check-input" type="radio" name="gender" id="gridRadios1" value="m" checked>
+                      <label class="form-check-label" for="gridRadios1">
                         Male
                       </label>
                     </div>
                    </div>
                    <div class=col-sm-1 >
                     <div class="form-check gender">
-                      <input class="form-check-input" type="radio" name="gender" id="female" value="f" >
-                      <label class="form-check-label" for="female">
+                      <input class="form-check-input" type="radio" name="gender" id="gridRadios3" value="f" >
+                      <label class="form-check-label" for="gridRadios3">
                         Female
                       </label>
                     </div>
@@ -199,12 +189,7 @@
                   <div class="col-sm-1"> </div>
                   <label for="country" class="col-sm-2 col-form-label">Country</label>
                   <div class="col-sm-9 col-right">
-                    <select name = "country" id="country"> 
-                     <option value = "-1" selected>Select Country</option>
-                     <option value = "1">USA</option>
-                     <option value = "2">UK</option>
-                     <option value = "3">INDIA</option>
-                  </select>
+                    <input type="text" class="form-control" id="country" placeholder="Country" name=country>
                   </div>
                 </div>
               <div class="form-group row">
@@ -212,8 +197,8 @@
                 <div class="col-sm-2 col-form-label">T&C</div>
                 <div class="col-sm-9 col-right">
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="tnc" name="tnc" value="yes">
-                    <label class="form-check-label" for="tnc">
+                    <input class="form-check-input" type="checkbox" id="gridCheck1">
+                    <label class="form-check-label" for="gridCheck1">
                       I agree that I will be present in the Conference.
                     </label>
                   </div>
@@ -222,52 +207,59 @@
               <div class="form-group row">
                 <div class="col-sm-4"></div>
                 <div class="col-sm-4">
-                  <button type="submit" name="submit-btn" class="btn btn-primary" onclick="return val();">Register</button>
+                  <button type="submit" id="submit-btn" class="btn btn-primary" onclick="return val();">Register</button>
                 </div>
                 <div class="col-sm-4"></div>
               </div>
             </form> 
 
             <?php 
-		           if(isset($_POST['submit-btn']))
-		             {
-                  
-                   $name = $_POST['name'];
-			             $email = $_POST['email'];
-                   $phone = $_POST['phone'];
-                   $dob = $_POST['dob'];
-                   $gender = $_POST['gender'];
-                   $country = $_POST['country'];
-                  
-
-				           $query="select * from register where email='$email'";
-                   $query_run=mysqli_query($con,$query);
+		 if(isset($_POST['submit-btn']))
+		 {
+       $name = $_POST['name'];
+			 $email = $_POST['email'];
+       $phone = $_POST['phone'];
+       $dob = $_POST['dob'];
+       $gender = $_POST['gender'];
+       $country = $_POST['country'];
+       $
+			 if($email)
+			 {
+				 $query="select * from register where email='$email'";
+                 $query_run=mysqli_query($con,$query);
 				 
-				            if((mysqli_num_rows($query_run))>0)
-				              {
-					              //email id already exists.
-                          echo '<script type="text/javascript">alert("email id already exists, please try other email id")</script>';
-				               }
-				            else
-				              {
-					               $query="insert into register values('$name','$email','$phone','$dob','$gender','$country')";
-                         $query_run=mysqli_query($con,$query);
+				 if((mysqli_num_rows($query_run))>0)
+				 {
+					 //email id already exists.
+					 echo '<script type="text/javascript">alert("email id already exists, please try other email id")</script>';
+				 }
+				 else
+				 {
+					 $query="insert into register values('$name','$email','$phone','$dob','$gender','$country')";
+                     $query_run=mysqli_query($con,$query);
 					 
-					                if($query_run)
-				                    {
+					 if($query_run)
+				     {
 					 
-					                 echo '<script type="text/javascript">alert("Registration Successful!")</script>';
-				                    }
-				                  else
-				                   {
-						                echo '<script type="text/javascript">alert("Error!")</script>';
-					                  }
+					 echo '<script type="text/javascript">alert("Registration Successful!")</script>';
+				     }
+				     else
+				     {
+						 echo '<script type="text/javascript">alert("Error!")</script>';
+					 }
 					
-				                }
+				 }
 				 
-                  }
-                 
-		          ?>
+			 }
+			 else
+			 {
+				 echo '<script type="text/javascript">alert("pls fill up the form!")</script>';
+				 
+			 }
+			 
+			 
+		 }
+		 ?>
 
           </div>    
   
